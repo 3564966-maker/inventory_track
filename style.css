@@ -151,3 +151,21 @@ body {
   font-size: 16px;
   cursor: pointer;
 }
+
+.item-card {
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  user-select: none;
+}
+
+.item-card:active {
+  transform: scale(0.97);
+  background-color: #f0f7ff;
+}
+
+.price-tag {
+  color: #666;
+  font-size: 11px;
+  display: block;
+  margin-top: 4px;
+}
