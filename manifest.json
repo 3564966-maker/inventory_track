@@ -1,0 +1,9 @@
+{
+  "short_name": "Tracker",
+  "name": "Inventory & Sales Tracker",
+  "icons": [],
+  "start_url": ".",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "display": "standalone"
+}

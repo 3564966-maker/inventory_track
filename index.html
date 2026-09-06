@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>Inventory Tracker</title>
+</head>
+<body>
+  <div id="app">
+    <!-- Balance Card -->
+    <header class="card">
+      <h2>Drawer Balance</h2>
+      <p id="drawer-balance">₪0.00</p>
+    </header>
+
+    <!-- Inventory Grid -->
+    <section class="grid">
+      <div class="card"><h3>Tobacco</h3><span id="stock-tobacco">0</span></div>
+      <div class="card"><h3>Rolling Paper</h3><span id="stock-rollingPaper">0</span></div>
+      <div class="card"><h3>Filters</h3><span id="stock-filters">0</span></div>
+      <div class="card"><h3>Lighters</h3><span id="stock-lighters">0</span></div>
+    </section>
+
+    <!-- Floating Action Button -->
+    <button id="open-modal-btn">+ Action</button>
+
+    <!-- Multi-Step Bubble Modal -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+
+        <!-- Step 1: Action Selection -->
+        <div id="step-action-select">
+          <h3>Select Action</h3>
+          <div class="bubble-grid">
+            <button class="bubble-btn" data-action="invest">📥 Invest</button>
+            <button class="bubble-btn" data-action="borrow">📤 Borrow</button>
+            <button class="bubble-btn" data-action="buy">🛒 Buy Goods</button>
+            <button class="bubble-btn" data-action="sell">🏷️ Sell Goods</button>
+          </div>
+          <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+        </div>
+
+        <!-- Step 2: Item Selection -->
+        <div id="step-item-select" class="hidden">
+          <h3 id="item-step-title">Select Item</h3>
+          <div class="bubble-grid">
+            <button class="bubble-btn" data-item="tobacco">Tobacco</button>
+            <button class="bubble-btn" data-item="rollingPaper">Rolling Paper</button>
+            <button class="bubble-btn" data-item="filters">Filters</button>
+            <button class="bubble-btn" data-item="lighters">Lighters</button>
+          </div>
+          <button class="cancel-btn" onclick="goToStep('step-action-select')">Back</button>
+        </div>
+
+        <!-- Step 3: Enter Details -->
+        <div id="step-details" class="hidden">
+          <h3 id="details-title">Enter Details</h3>
+
+          <div id="qty-container" class="input-group">
+            <label>Quantity:</label>
+            <input type="number" id="action-qty" min="1" value="1">
+          </div>
+
+          <div class="input-group">
+            <label>Total Amount (₪):</label>
+            <input type="number" id="action-amount" step="0.01">
+            <small id="price-hint" style="color: #666;"></small>
+          </div>
+
+          <div class="button-row">
+            <button id="submit-action-btn" class="primary-btn">Save</button>
+            <button class="cancel-btn" onclick="closeModal()">Cancel</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- History Log -->
+    <section class="history-section">
+      <h3>History Log</h3>
+      <ul id="history-list"></ul>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
