@@ -2,10 +2,10 @@
 // PRICE CONFIGURATION
 // ====================================================
 const PRICES = {
-  tobacco:      { buy: 70,      sell: 90 },
-  filters:      { buy: 50 / 30, sell: 3  },
-  rollingPaper: { buy: 10 / 3,  sell: 5  },
-  lighters:     { buy: 5,       sell: 10 }
+  tobacco:      { buy: 70, sell: 90 },
+  filters:      { buy: 1 , sell: 3  },
+  rollingPaper: { buy: 0.66667 ,  sell: 2  },
+  lighters:     { buy: 3.33334,   sell: 5 }
 };
 
 // --- App State ---
