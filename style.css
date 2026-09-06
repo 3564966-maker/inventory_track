@@ -1,3 +1,71 @@
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 16px;
+  background: #f4f4f9;
+}
+
+/* Helper Class to Hide Unused Steps */
+.hidden {
+  display: none !important;
+}
+
+/* Dashboard Layout */
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Floating Action Button */
+#open-modal-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 16px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 100;
+}
+
+/* TRUE POP-UP OVERLAY */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* Darkens background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Floating White Box (The Pop-up Window) */
+.modal-content {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  width: 85%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Bubble Buttons inside Pop-up */
 .bubble-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -7,14 +75,13 @@
 
 .bubble-btn {
   padding: 18px 12px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   border: 2px solid #007bff;
   background: #f0f7ff;
   color: #007bff;
   border-radius: 12px;
   cursor: pointer;
-  text-align: center;
 }
 
 .bubble-btn:active {
@@ -28,29 +95,41 @@
   flex-direction: column;
 }
 
+.input-group input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 4px;
+}
+
 .button-row {
   display: flex;
   gap: 8px;
-  margin-top: 12px;
+  margin-top: 16px;
+}
+
+.cancel-btn, .primary-btn {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .cancel-btn {
-  padding: 12px;
-  background: #eee;
-  border: none;
-  border-radius: 6px;
-  width: 100%;
+  background: #eeeeee;
+  color: #333;
 }
 
 .primary-btn {
-  padding: 12px;
   background: #007bff;
   color: white;
-  border: none;
-  border-radius: 6px;
-  width: 100%;
-  font-size: 16px;
 }
+
+/* History Log */
 #history-list {
   list-style-type: none;
   padding: 0;
@@ -64,7 +143,6 @@
   padding: 12px;
   border-radius: 6px;
   margin-bottom: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .delete-btn {
@@ -72,10 +150,4 @@
   border: none;
   font-size: 16px;
   cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-
-.delete-btn:active {
-  background: #ffe6e6;
 }
